@@ -161,16 +161,11 @@ public class UsersActivity extends AppCompatActivity {
                             try {
                                 String msg = "Group Name: " + groupName.getText().toString() + " Password: " + groupPassword.getText().toString();
                                 sendNotification(msg, "fd", token);
+                                startActivity(new Intent(UsersActivity.this, MainActivity.class));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-//                            final Firebase notifications = ref.child("notificationRequests");
-//
-//                            Map notification = new HashMap<>();
-//                            notification.put("username", user);
-//                            notification.put("message", message);
-//
-//                            notifications.push().setValue(notification);
+
                         }
                     }
                 }

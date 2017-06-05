@@ -103,6 +103,9 @@ public class Register extends AppCompatActivity {
                                         reference.child(user).child("phone").setValue(phone);
                                         reference.child(user).child("token").setValue(token);
                                         Toast.makeText(Register.this, "registration successful", Toast.LENGTH_LONG).show();
+                                        UserDetails.username = user;
+                                        UserDetails.phonenumber = phone;
+                                        startActivity(new Intent(Register.this, MainActivity.class));
                                     } else {
                                         Toast.makeText(Register.this, "username already exists", Toast.LENGTH_LONG).show();
                                     }
